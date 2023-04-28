@@ -24,6 +24,10 @@ const AddPerson = () => {
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" value={person.email} onChange={handleChange} />
             </div>
+            <div className="field">
+                <label htmlFor="date">Date</label>
+                <input type="date" name="date" value={person.date} onChange={handleChange} />
+            </div>
         </form>
     </div>
   )
