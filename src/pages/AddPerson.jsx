@@ -20,6 +20,10 @@ const AddPerson = () => {
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" value={person.name} onChange={handleChange} />
             </div>
+            <div className="field">
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" value={person.email} onChange={handleChange} />
+            </div>
         </form>
     </div>
   )
