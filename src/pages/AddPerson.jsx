@@ -23,7 +23,8 @@ const AddPerson = ({addPerson}) => {
         setPerson({name:'', email: '', date: ''})
     }
   return (
-    <div className="ui main">
+    <div className="ui main container">
+        <h2 style={{marginTop: '3rem', marginBottom: '3rem'}}>Add Birthday Information Below</h2>
         <form className="ui form" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="name">Name</label>
@@ -37,7 +38,7 @@ const AddPerson = ({addPerson}) => {
                 <label htmlFor="date">Date</label>
                 <input type="date" name="date" id='date' value={person.date} onChange={handleChange} />
             </div>
-            <button className="ui button green">Add Birthday Date</button>
+            <button className="ui button green">Add Birthday</button>
         </form>
     </div>
   )
