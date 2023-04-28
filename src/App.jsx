@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import {v4 as uuidv4} from 'uuid'
-import Header from './pages/Header'
 import AddPerson from './pages/AddPerson'
 import BirthdayList from './pages/BirthdayList'
 import SharedLayout from './pages/SharedLayout'
