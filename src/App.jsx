@@ -11,7 +11,6 @@ const [user, setUser] = useState(() => {
 })
 
 
-
 const addPerson = (person) => {
   setUser([...user, {id: uuidv4(), ...person}])
 }
@@ -24,6 +23,7 @@ const deletePerson = (id) => {
 useEffect(() => {
   localStorage.setItem('users', JSON.stringify(user))
 }, [user])
+
   return (
     <div>
       <Header />
