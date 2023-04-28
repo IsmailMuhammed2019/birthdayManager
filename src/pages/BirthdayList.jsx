@@ -1,4 +1,5 @@
 import React from 'react'
+import BirthdayCard from './BirthdayCard'
 
 
 const BirthdayList = ({user, deletePerson}) => {
@@ -9,22 +10,9 @@ const handleClick = (id) => {
   return (
     <div className="ui celled list">
         {user.map((person) => {
-            const {id, name, email, date} = person
+            
             return (
-                <div className="ui item"  key={id} style={{display: 'flex', alignItems: 'center', justifyContent:'space-between'}}>
-            <div className="content">
-                <h3 className="header">
-                    {name}
-                </h3>
-                <p className='header'>
-                    {email}
-                </p>
-                <p className='header'>
-                    {date}
-                </p>
-            </div>
-            <i className="trash alternate outline icon red style={{cursor: 'pointer'}}"  onClick={() => handleClick(id)}/>
-        </div>
+                <BirthdayCard key={id} person={person}/>
             )
         })}
     </div>
