@@ -13,7 +13,7 @@ const Header = () => {
     return (
       <header className='ui fix menu'>
         <div className='ui container center' style={headerStyle}>
-          <h2>Contact Manager</h2>
+          <h2>Birthday Date Reminder</h2>
         </div>
       </header>
     )
