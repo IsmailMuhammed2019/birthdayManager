@@ -12,7 +12,7 @@ const handleClick = (id) => {
         {user.map((person) => {
             
             return (
-                <BirthdayCard key={id} person={person}/>
+                <BirthdayCard key={person.id} person={person} handleClick={handleClick}/>
             )
         })}
     </div>
