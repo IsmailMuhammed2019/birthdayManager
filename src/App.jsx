@@ -1,8 +1,15 @@
 import React from 'react'
+import Header from './pages/Header'
+import AddPerson from './pages/AddPerson'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Header />
+      <div className="ui container">
+        <AddPerson />
+      </div>
+    </div>
   )
 }
 
