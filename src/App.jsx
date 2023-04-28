@@ -11,6 +11,7 @@ const addPerson = (person) => {
   setUser([...user, {id: uuidv4(), ...person}])
 }
 
+console.log(user)
 
 
   return (
