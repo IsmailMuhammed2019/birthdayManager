@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const AddPerson = () => {
+const AddPerson = ({addPerson}) => {
 
     const [person, setPerson] = useState({name: '', email:'', date:''})
 
@@ -13,9 +13,18 @@ const AddPerson = () => {
             }
         })
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(!name || !email || !date) {
+            return alert('Please input valid information ')
+        }
+        addPerson(person)
+        setPerson({name:'', email: '', date: ''})
+    }
   return (
     <div className="ui main">
-        <form className="ui form">
+        <form className="ui form" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id='name' value={person.name} onChange={handleChange} />
