@@ -11,15 +11,16 @@ const addPerson = (person) => {
   setUser([...user, {id: uuidv4(), ...person}])
 }
 
-console.log(user)
-
-
+const deletePerson = (id) => {
+  const newPerson = user.filter((person) => person.id !== id)
+  setUser(newPerson)
+}
   return (
     <div>
       <Header />
       <div className="ui container">
         <AddPerson addPerson={addPerson} />
-        <BirthdayList user={user} />
+        <BirthdayList user={user} deletePerson={deletePerson}/>
       </div>
     </div>
   )
