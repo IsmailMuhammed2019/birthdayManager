@@ -9,6 +9,7 @@ const handleClick = (id) => {
 
   return (
     <div className="ui celled list">
+        <h2 style={{marginTop: '2rem'}}>List of Pending Birthdays</h2>
         {user.map((person) => {
             
             return (
