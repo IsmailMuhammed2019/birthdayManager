@@ -18,15 +18,15 @@ const AddPerson = () => {
         <form className="ui form">
             <div className="field">
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" value={person.name} onChange={handleChange} />
+                <input type="text" name="name" id='name' value={person.name} onChange={handleChange} />
             </div>
             <div className="field">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" value={person.email} onChange={handleChange} />
+                <input type="email" name="email" id='email' value={person.email} onChange={handleChange} />
             </div>
             <div className="field">
                 <label htmlFor="date">Date</label>
-                <input type="date" name="date" value={person.date} onChange={handleChange} />
+                <input type="date" name="date" id='date' value={person.date} onChange={handleChange} />
             </div>
             <button className="ui button green">Add Birthday Date</button>
         </form>
