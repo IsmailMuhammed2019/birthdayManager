@@ -1,23 +1,32 @@
 import React from 'react'
 
 
-const BirthdayList = ({user}) => {
-    const {id, name, email, date} = user
+const BirthdayList = ({user, deletePerson}) => {
+const handleClick = (id) => {
+    deletePerson(id)
+}
+
   return (
     <div className="ui celled list">
-        <div className="ui item" style={{display: 'flex', alignItems: 'center', justifyContent:'space-between'}}>
+        {user.map((person) => {
+            const {id, name, email, date} = person
+            return (
+                <div className="ui item"  key={id} style={{display: 'flex', alignItems: 'center', justifyContent:'space-between'}}>
             <div className="content">
                 <h3 className="header">
-                    Name: {name}
+                    {name}
                 </h3>
                 <p className='header'>
-                    Email: {email}
+                    {email}
                 </p>
                 <p className='header'>
-                    Birthday Date: {date}
+                    {date}
                 </p>
             </div>
+            <i className="trash alternate outline icon red style={{cursor: 'pointer'}}"  onClick={() => handleClick(id)}/>
         </div>
+            )
+        })}
     </div>
   )
 }
