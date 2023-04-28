@@ -1,4 +1,4 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
 import BirthdayCard from './BirthdayCard'
 
 
@@ -8,8 +8,11 @@ const handleClick = (id) => {
 }
 
   return (
-    <div className="ui celled list">
+    <div className="ui container celled list" >
+        <div style={{display: 'flex', alignItems: 'center', justifyContent:'space-between'}}>
         <h2 style={{marginTop: '2rem'}}>List of Pending Birthdays</h2>
+        <NavLink to='/addperson' className="ui button green">Add Birthday</NavLink>
+        </div>
         {user.map((person) => {
             
             return (
