@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import {v4 as uuidv4} from 'uuid'
 import Header from './pages/Header'
 import AddPerson from './pages/AddPerson'
 import BirthdayList from './pages/BirthdayList'
+import SharedLayout from './pages/SharedLayout'
 
 const App = () => {
 const [user, setUser] = useState(() => {
@@ -25,13 +28,14 @@ useEffect(() => {
 }, [user])
 
   return (
-    <div>
-      <Header />
-      <div className="ui container">
-        <AddPerson addPerson={addPerson} />
-        <BirthdayList user={user} deletePerson={deletePerson}/>
-      </div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<SharedLayout />} >
+          <Route index element={<BirthdayList user={user} deletePerson={deletePerson}/>} />
+          <Route path='/addperson' element={<AddPerson addPerson={addPerson} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
