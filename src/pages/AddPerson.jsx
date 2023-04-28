@@ -28,6 +28,7 @@ const AddPerson = () => {
                 <label htmlFor="date">Date</label>
                 <input type="date" name="date" value={person.date} onChange={handleChange} />
             </div>
+            <button className="ui button green">Add Birthday Date</button>
         </form>
     </div>
   )
