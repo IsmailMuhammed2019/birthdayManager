@@ -16,7 +16,7 @@ const AddPerson = ({addPerson}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(!name || !email || !date) {
+        if(!person.name || !person.email || !person.date) {
             return alert('Please input valid information ')
         }
         addPerson(person)
