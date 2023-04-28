@@ -1,8 +1,11 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const AddPerson = ({addPerson}) => {
 
     const [person, setPerson] = useState({name: '', email:'', date:''})
+
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const {name, type, value, checked} =  e.target
@@ -21,6 +24,8 @@ const AddPerson = ({addPerson}) => {
         }
         addPerson(person)
         setPerson({name:'', email: '', date: ''})
+        navigate('/')
+        
     }
   return (
     <div className="ui main container">
