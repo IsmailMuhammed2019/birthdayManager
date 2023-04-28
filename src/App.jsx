@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './pages/Header'
 import AddPerson from './pages/AddPerson'
+import BirthdayList from './pages/BirthdayList'
 
 const App = () => {
 const [user, setUser] = useState('')
@@ -16,6 +17,7 @@ const addPerson = (person) => {
       <Header />
       <div className="ui container">
         <AddPerson addPerson={addPerson} />
+        <BirthdayList user={user} />
       </div>
     </div>
   )
