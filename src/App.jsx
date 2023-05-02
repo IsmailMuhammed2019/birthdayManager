@@ -19,8 +19,14 @@ const fetchData = async () => {
   return resp
 }
 
-const addPerson = (person) => {
-  setUser([...user, {id: uuidv4(), ...person}])
+const addPerson = async (person) => {
+  const request = {
+    id: uuidv4(), 
+    ...person
+  }
+
+  const resp = await api.post('/contats', request)
+  setUser([...user, resp.data])
 }
 
 const deletePerson = (id) => {
