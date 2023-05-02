@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import api from './api/contact'
 import {v4 as uuidv4} from 'uuid'
 import AddPerson from './pages/AddPerson'
 import BirthdayList from './pages/BirthdayList'
 import SharedLayout from './pages/SharedLayout'
+import axios from 'axios'
 
 const App = () => {
-const [user, setUser] = useState(() => {
-  const savedata = JSON.parse(localStorage.getItem('users'))
-  return savedata
-})
+  const [user, setUser] = useState([])
+// const [user, setUser] = useState(() async => {
+//   // const savedata = JSON.parse(localStorage.getItem('users'))
+//   // return savedata
+// })
 
+const fetchData = async () => {
+  const resp = await api.get('/contacts')
+  return resp
+}
 
 const addPerson = (person) => {
   setUser([...user, {id: uuidv4(), ...person}])
@@ -21,6 +27,14 @@ const deletePerson = (id) => {
   const newPerson = user.filter((person) => person.id !== id)
   setUser(newPerson)
 }
+
+useEffect(() => {
+  const retrivedata = async () =>{
+    const allContacts = await fetchData()
+    if(allContacts) setUser(allContacts.data)
+  }
+  retrivedata()
+})
 
 useEffect(() => {
   localStorage.setItem('users', JSON.stringify(user))
