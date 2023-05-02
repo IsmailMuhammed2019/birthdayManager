@@ -25,11 +25,12 @@ const addPerson = async (person) => {
     ...person
   }
 
-  const resp = await api.post('/contats', request)
+  const resp = await api.post('/contacts', request)
   setUser([...user, resp.data])
 }
 
-const deletePerson = (id) => {
+const deletePerson = async (id) => {
+  await api.delete(`/contacts/${id}`)
   const newPerson = user.filter((person) => person.id !== id)
   setUser(newPerson)
 }
