@@ -61,7 +61,7 @@ useEffect(() => {
         <Route path='/' element={<SharedLayout />} >
           <Route index element={<BirthdayList user={user} deletePerson={deletePerson}/>} />
           <Route path='/addperson' element={<AddPerson addPerson={addPerson} />} />
-          <Route path='/edit' element={<EditPerson />} />
+          <Route path='/edit' element={<EditPerson updatePerson={updatePerson}/>} />
         </Route>
       </Routes>
     </BrowserRouter>
