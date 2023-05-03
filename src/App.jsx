@@ -5,6 +5,7 @@ import {v4 as uuidv4} from 'uuid'
 import AddPerson from './pages/AddPerson'
 import BirthdayList from './pages/BirthdayList'
 import SharedLayout from './pages/SharedLayout'
+import EditPerson from './pages/EditPerson'
 
 
 const App = () => {
@@ -54,6 +55,7 @@ useEffect(() => {
         <Route path='/' element={<SharedLayout />} >
           <Route index element={<BirthdayList user={user} deletePerson={deletePerson}/>} />
           <Route path='/addperson' element={<AddPerson addPerson={addPerson} />} />
+          <Route path='/edit' element={<EditPerson />} />
         </Route>
       </Routes>
     </BrowserRouter>
