@@ -30,6 +30,12 @@ const addPerson = async (person) => {
   setUser([...user, resp.data])
 }
 
+const updatePerson = async (id) => {
+
+  const specificPerson = user.find((person) => person.id === id)
+  setUser({...specificPerson})
+}
+
 const deletePerson = async (id) => {
   await api.delete(`/contacts/${id}`)
   const newPerson = user.filter((person) => person.id !== id)
