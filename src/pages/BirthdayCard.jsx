@@ -1,10 +1,10 @@
-import React from 'react'
+import { NavLink } from "react-router-dom"
 
 const BirthdayCard = ({person, handleClick}) => {
     const { id, name, email, date} = person
   return (
     <div className="ui item" style={{display: 'flex', alignItems: 'center', justifyContent:'space-between'}}>
-            <div className="content">
+            <div className="content" style={{width:'90%'}}>
                 <h3 className="header">
                     {name}
                 </h3>
@@ -15,6 +15,9 @@ const BirthdayCard = ({person, handleClick}) => {
                     {date}
                 </p>
             </div>
+            <NavLink to='/edit'>
+            <i className="edit alternate outline icon blue" style={{cursor: 'pointer'}}/>
+            </NavLink>
             <i className="trash alternate outline icon red" style={{cursor: 'pointer'}}  onClick={() => handleClick(id)}/>
         </div>
   )
