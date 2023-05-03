@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const EditPerson = () => {
+const EditPerson = ({updatePerson}) => {
     const [person, setPerson] = useState({name: '', email:'', date:''})
 
     const navigate = useNavigate()
@@ -20,7 +22,7 @@ const EditPerson = () => {
         if(!person.name || !person.email || !person.date) {
             return alert('Please input valid information ')
         }
-        addPerson(person)
+        updatePerson(person)
         setPerson({name:'', email: '', date: ''})
         navigate('/')
         
