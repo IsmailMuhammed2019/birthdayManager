@@ -15,7 +15,7 @@ const BirthdayCard = ({person, handleClick}) => {
                     {date}
                 </p>
             </div>
-            <i className="trash alternate outline icon red style={{cursor: 'pointer'}}"  onClick={() => handleClick(id)}/>
+            <i className="trash alternate outline icon red" style={{cursor: 'pointer'}}  onClick={() => handleClick(id)}/>
         </div>
   )
 }

@@ -27,6 +27,7 @@ const AddPerson = ({addPerson}) => {
         navigate('/')
         
     }
+    
   return (
     <div className="ui main container">
         <h2 style={{marginTop: '3rem', marginBottom: '3rem'}}>Add Birthday Information Below</h2>

@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid'
 import AddPerson from './pages/AddPerson'
 import BirthdayList from './pages/BirthdayList'
 import SharedLayout from './pages/SharedLayout'
-import axios from 'axios'
+
 
 const App = () => {
   const [user, setUser] = useState([])
@@ -33,7 +33,8 @@ const deletePerson = async (id) => {
   await api.delete(`/contacts/${id}`)
   const newPerson = user.filter((person) => person.id !== id)
   setUser(newPerson)
-}
+} 
+
 
 useEffect(() => {
   const retrivedata = async () =>{
